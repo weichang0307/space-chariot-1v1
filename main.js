@@ -98,10 +98,10 @@ function draw(){
     
 
     for(let i of ws){
-        world_.draw_helper(i,'yellow')
+        world.draw_helper(i,'yellow')
     }
     for(let i of barriers){
-        world_.draw_helper(i,'rgb(200,100,50)')
+        world.draw_helper(i,'rgb(200,100,50)')
     }
     information.draw()
 
