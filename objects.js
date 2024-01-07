@@ -252,7 +252,7 @@ class Information{
     constructor(x,y){
         this.position=[x,y]
         this.state=0
-        this.text='Player1 \n控制引擎:E,D,Y,G  發射子彈:V \nPlayer2 \n控制引擎:7,4,9,6  發射子彈:0 \n \n一共有五滴血 被子彈打到扣一滴 \n按空白鍵可察看雙方血量'
+        this.text='Player1 \nEngine control:E,D,Y,G  Fire:V \nPlayer2 \nEngine control:7,4,9,6  Fire:0 \n \nGameover if someone was hit five times \nSpace to check characters HP'
         this.textArray=this.text.split('\n')
     }
     onclick(click_point){
@@ -265,7 +265,7 @@ class Information{
         }
     }
     draw(ctx_=ctx){
-        ctx_.globalAlpha=0.5
+        ctx_.globalAlpha=0.8
         if(this.state===0){
             ctx_.beginPath()
             ctx_.arc(this.position[0],this.position[1],25,0,Math.PI*2)
@@ -282,7 +282,7 @@ class Information{
             ctx_.fillRect(0,0,1600,800)
             ctx_.globalAlpha=1
             ctx_.font='45px serif'
-            ctx_.fillStyle='white'
+            ctx_.fillStyle='yellow'
             for(let i in this.textArray){
                 ctx_.fillText(this.textArray[i],100,100+50*i)
             }
